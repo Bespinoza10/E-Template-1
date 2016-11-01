@@ -1,0 +1,78 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "modules/all";
+@import "nav";
+@import "header";
+@import "services";
+@import "slogan";
+@import "gallery";
+body{
+  font-family: 'Lato', sans-serif;
+}
+
+h1{
+  font-size: 40px;
+}
+
+p{
+  font-size: 18px;
+}
+a{
+  cursor: pointer !important;
+  &:hover{
+    cursor: pointer !important;
+  }
+}
+
+input.form-control, .form-control[readonly]{
+  border-radius: 0px;
+  background-color: transparent;
+  border-bottom: 1px solid #d1d1d1;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  box-shadow: none;
+}
+
+.text-center{
+  text-align: center;
+}
+
+.center{
+  margin: 0 auto;
+  float: none;
+}
+
+.margin-bottom{
+  margin-bottom: 80px;
+}
+.padding-none{
+  padding: 0;
+}
+.padding-section{
+  padding-top: 6%;
+  padding-bottom:6%;
+}
+.padding-top-little{
+  padding-top: 15px;
+}
+
+.padding-section-elements-top{
+  padding-top: 3%;
+}
+
+.padding-section-elements-bottom{
+  padding-bottom: 3%;
+}
+
+
+.btn{
+  border-radius: 0px;
+}
+
+.btn-big{
+  padding: 1% 3%;
+  font-size: 15px;
+  letter-spacing: 2px;
+}

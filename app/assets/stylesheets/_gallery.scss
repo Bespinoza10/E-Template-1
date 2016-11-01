@@ -1,0 +1,9 @@
+@import "modules/all";
+//gallery- portfolio
+.gallery-container, .gallery-img{
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.grid-item { width: 20%; }
+@import "img-hover";
+@import "gallery-modals";

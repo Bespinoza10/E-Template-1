@@ -1,0 +1,28 @@
+@import "modules/all";
+#slogan{
+  background-color: $orange;
+  color: $footer-black;
+   h1{
+     font-weight: 100;
+     letter-spacing: 10px;
+     text-transform: uppercase;
+   }
+   .btn-contact{
+    text-align: center;
+    display: block;
+     margin-top: 20px;
+     border-radius: 0px;
+     background: none;
+     border: 2px solid $footer-black;
+     padding: 3% 0;
+     letter-spacing: 4px;
+     color: #000;
+     @include transition(all .6s);
+
+     &:hover{
+       border-color: $white;
+       color: #fff;
+       @include transition(all .6s);
+     }
+   }
+}

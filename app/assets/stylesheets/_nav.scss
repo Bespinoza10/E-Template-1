@@ -1,0 +1,97 @@
+@import "modules/all";
+.navbar-default .navbar-toggle{
+  border-radius: 0px;
+  border: 2px solid $orange;
+  &:hover{
+    background: none;
+  }
+  &:focus{
+    border-radius: 0px;
+    border: 2px solid $orange;
+    background: none;
+  }
+
+  .icon-bar{
+    background-color: $orange;
+  }
+}
+
+.navbar{
+  border: none;
+  border-radius: 0px;
+  background-color: transparent;
+  margin-bottom: 0px;
+  .navbar-header{
+    margin-top: 2vh;
+    font-size: 20px;
+    .btn-border{
+      border: 1px solid $white;
+      color: #fff;
+      padding: 10px;
+      @include transition(all .6s);
+      &:hover{
+        padding: 10px 20px;
+        @include transition(all .6s);
+      }
+    }
+    a{
+      color: $white;
+      font-weight: 100;
+      letter-spacing: 5px;
+
+    }
+  }
+  .navbar-nav{
+    margin-top: 2vh;
+
+    li a{
+      font-family: 'Lato', sans-serif;
+      font-size: 18px;
+      letter-spacing: 3px;
+      font-weight: 100;
+      color: $orange;
+      @include transition(all .8s);
+      &:hover{
+        color: $purple;
+        @include transition(all .8s);
+      }
+      &:focus{
+        color: $purple;
+        @include transition(all .8s);
+      }
+    }
+  }
+}
+
+  // on Scroll
+
+ nav.navbar.shrink-nav{
+    background: $orange;
+    min-height: 20px !important;
+    @include transition(all .4s);
+
+    .navbar-brand{
+      font-size: 15px;
+      @include transition(all .4s);
+    }.navbar-right li > a{
+      font-size: 13px;
+      font-weight: 100;
+      letter-spacing: 5px;
+      color: $white;
+      @include transition(all .4s);
+    }
+  }
+
+  //Edit Mode
+  .well{
+    border-radius: 0px;
+    border: none;
+    box-shadow: none;
+  }
+
+  @media #{$medium-and-down}{
+    .well{
+      height: 60vh;
+      overflow-y:scroll!important; overflow-x:hidden!important;
+    }
+  }
