@@ -11,6 +11,24 @@
 // about supported directives.
 //
 //= require jquery
+//= require bootstrap-sprockets
+//= require masonry.pkgd
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$(window).scroll(function() {
+  if ($(document).scrollTop() > 50) {
+    $('nav').addClass('shrink');
+  } else {
+    $('nav').removeClass('shrink');
+  }
+});
+
+$(document).ready(function(){
+  setTimeout(function(){
+    $('#notice-wrapper').fadeOut("slow", function(){
+      $(this).remove();
+    })
+  }, 3000);
+});
