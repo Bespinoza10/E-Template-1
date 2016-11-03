@@ -19,7 +19,7 @@
 .navbar{
   border: none;
   border-radius: 0px;
-  background-color: transparent;
+  background:none;
   margin-bottom: 0px;
   .navbar-header{
     margin-top: 2vh;
@@ -65,7 +65,7 @@
 
   // on Scroll
 
- nav.navbar.shrink-nav{
+.shrink{
     background: $orange;
     min-height: 20px !important;
     @include transition(all .4s);
@@ -81,6 +81,66 @@
       @include transition(all .4s);
     }
   }
+
+// .navbar{
+//   background: rgba(255, 255, 255, 0.44);
+//   border: none;
+//   border-radius: 0;
+//   margin-bottom: 0;
+//   transition: background .3s ease-in-out;
+//   -webkit-transition: background .3s ease-in-out;
+//   -moz-transition: background .3s ease-in-out;
+//   -o-transition: background .3s ease-in-out;
+//   .navbar-brand{
+//     color: #000;
+//     font-weight: 400;
+//     font-size: 35px;
+//     transition: font-size .3s ease-in-out;
+//     -webkit-transition: font-size .3s ease-in-out;
+//     -o-transition: font-size .3s ease-in-out;
+//     -moz-transition: font-size .3s ease-in-out;
+//   }.navbar-right li > a{
+//     color: #000;
+//     font-size: 20px;
+//     font-weight: 300;
+//     transition: font-size .3s ease-in-out;
+//     -webkit-transition: font-size .3s ease-in-out;
+//     -o-transition: font-size .3s ease-in-out;
+//     -moz-transition: font-size .3s ease-in-out;
+//   }
+// }
+//
+//
+// .navbar .navbar-right li > a.signout:hover{
+//   color: #fff;
+//   transition: color .2s ease-in-out;
+//   -webkit-transition: color .2s ease-in-out;
+//   -o-transition: color .2s ease-in-out;
+//   -moz-transition: color .2s ease-in-out;
+// }
+// // on Scroll
+//
+//   .shrink{
+//     background: #fff;
+//     transition: background .3s ease-in-out;
+//     -webkit-transition: background .3s ease-in-out;
+//     -moz-transition: background .3s ease-in-out;
+//     -o-transition: background .3s ease-in-out;
+//     .navbar-brand{
+//       font-size: 30px;
+//       transition: font-size .3s ease-in-out;
+//       -webkit-transition: font-size .3s ease-in-out;
+//       -o-transition: font-size .3s ease-in-out;
+//       -moz-transition: font-size .3s ease-in-out;
+//     }.navbar-right li > a{
+//       font-size: 18px;
+//       transition: font-size .3s ease-in-out;
+//       -webkit-transition: font-size .3s ease-in-out;
+//       -o-transition: font-size .3s ease-in-out;
+//       -moz-transition: font-size .3s ease-in-out;
+//   }
+// }
+
 
   //Edit Mode
   .well{
