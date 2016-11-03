@@ -13,9 +13,10 @@
       <div class="col-md-12">
         <%= render partial: 'layouts/sections/dropdowns/nav_edit'%>
       </div>
-      <a class="btn btn-border" role="button" data-toggle="collapse" href="#nav-edit" aria-expanded="false" aria-controls="collapseExample">
+      <a class="btn btn-border" href="<%= new_logo_path %>">Edit Logo</a>
+      <!-- <a class="btn btn-border" role="button" data-toggle="collapse" href="#nav-edit" aria-expanded="false" aria-controls="collapseExample">
         Editar Navegacion
-      </a>
+      </a> -->
     </div>
 
     <!-- NAV STARTS -->
@@ -28,7 +29,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" >AquiEstoy.MX</a>
+        <a class="navbar-brand" ><%= @logos.name%> </a>
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
