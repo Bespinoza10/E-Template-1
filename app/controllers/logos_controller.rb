@@ -1,0 +1,3 @@
+class LogosController < ApplicationController
+
+end
