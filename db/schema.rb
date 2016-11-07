@@ -13,7 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20161107191354) do
 
-  create_table "homes", force: :cascade do |t|
+  create_table "contents", force: :cascade do |t|
     t.string   "name"
     t.string   "header_title"
     t.string   "services_title"
@@ -29,16 +29,6 @@ ActiveRecord::Schema.define(version: 20161107191354) do
     t.string   "pin_username"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
-  end
-
-  create_table "logos", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
-    t.string   "logo_image_file_name"
-    t.string   "logo_image_content_type"
-    t.integer  "logo_image_file_size"
-    t.datetime "logo_image_updated_at"
   end
 
 end

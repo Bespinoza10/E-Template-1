@@ -1,6 +1,6 @@
-class CreateHomes < ActiveRecord::Migration
+class CreateContents < ActiveRecord::Migration
   def change
-    create_table :homes do |t|
+    create_table :contents do |t|
       t.string :name
       t.string :header_title
       t.string :services_title
