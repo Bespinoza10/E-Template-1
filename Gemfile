@@ -24,7 +24,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'mail_form'
 
-gem 'slim', '~> 3.0', '>= 3.0.7'
+gem 'font-awesome-rails', '~> 4.7'
 gem 'bootstrap-sass'
 
 gem 'paperclip'
