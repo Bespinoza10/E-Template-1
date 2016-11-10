@@ -1,5 +1,6 @@
 class ContentsController < ApplicationController
   before_action :find_content, only: [:show, :edit, :update, :destroy]
+
   def index
     @contents = Content.all
   end
@@ -16,10 +17,6 @@ class ContentsController < ApplicationController
     else
       render 'new', notice: "Sorry content failed to create!!!"
     end
-  end
-
-  def show
-
   end
 
   def edit

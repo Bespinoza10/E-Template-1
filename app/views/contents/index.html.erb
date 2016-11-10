@@ -1,7 +1,9 @@
-<p><%= @homes.header_title %></p>
-<%= render partial: 'layouts/sections/header'%>
-<%= render partial: 'layouts/sections/services'%>
-<%= render partial: 'layouts/sections/slogan'%>
-<%= render partial: 'layouts/sections/gallery'%>
-<%= render partial: 'layouts/sections/contact'%>
-<%= render partial: 'layouts/sections/footer'%>
+<% @contents.each do |content| %>
+  <%= render partial: 'contents/sections/header'%>
+  <%= render partial: 'contents/sections/services'%>
+  <%= render partial: 'contents/sections/slogan'%>
+  <%= render partial: 'contents/sections/gallery'%>
+  <%= render partial: 'contents/sections/contact'%>
+  <%= render partial: 'contents/sections/footer'%>
+  <a><%= link_to "Edit", edit_content_path(content), {class: "btn sendbtn"} %></a>
+<%end%>
