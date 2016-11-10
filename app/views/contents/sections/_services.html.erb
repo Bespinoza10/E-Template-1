@@ -8,7 +8,7 @@
   <% @services.each do |service|%>
     <div class="col-sm-3 col-md-3">
       <div class="col-md-6 center">
-        <img class="img-responsive" src="assets/custom-design.png">
+        <%= image_tag service.services_img, class: "img-responsive"%>
       </div>
       <h3 class="text-center">
         <%= service.title %>
