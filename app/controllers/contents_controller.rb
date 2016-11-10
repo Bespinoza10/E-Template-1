@@ -3,6 +3,7 @@ class ContentsController < ApplicationController
 
   def index
     @contents = Content.all
+    @services = Service.all.order("created_at asc")
   end
 
   def new
