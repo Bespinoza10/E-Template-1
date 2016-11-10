@@ -5,23 +5,23 @@
   <div class="col-md-6 center padding-section-elements-bottom">
     <hr>
   </div>
-
-  <div class="col-sm-3 col-md-3">
-    <div class="col-md-6 center">
-      <img class="img-responsive" src="assets/custom-design.png">
+  <% @services.each do |service|%>
+    <div class="col-sm-3 col-md-3">
+      <div class="col-md-6 center">
+        <img class="img-responsive" src="assets/custom-design.png">
+      </div>
+      <h3 class="text-center">
+        <%= service.title %>
+      </h3>
+      <p class="text-center">
+        <%= service.description%>
+      </p>
+      <a><%= link_to "Edit Service", edit_service_path(service), {class: "btn sendbtn"} %></a>
+      <!-- <a class="btn btn-warning" data-toggle="modal" data-target="#services-modal">Editar Servicio</a> -->
     </div>
-    <h3 class="text-center">
-      Custom Design
-    </h3>
-    <p class="text-center">
-      Bacon biltong sirloservices-modalin ball tip short loin tenderloin. Beef tri-tip shankle sirloin,
-      pork chop prosciutto corned beef rump jowl. Ground round meatloaf kevin turducken chuck.
-    </p>
-
-    <a class="btn btn-warning" data-toggle="modal" data-target="#services-modal">Editar Servicio</a>
-  </div>
-
-  <div class="col-sm-3 col-md-3">
+  <%end%>
+    <a><%= link_to "New Service", new_service_path(@service), {class: "btn sendbtn"} %></a>
+  <!-- <div class="col-sm-3 col-md-3">
     <div class="col-md-6 center">
       <img class="img-responsive " src="assets/shoe-icon.png">
     </div>
@@ -61,5 +61,5 @@
       pork chop prosciutto corned beef rump jowl. Ground round meatloaf kevin turducken chuck.
     </p>
     <a class="btn btn-warning" data-toggle="modal" data-target="#services-modal">Editar Servicio</a>
-  </div>
+  </div> -->
 </div>
