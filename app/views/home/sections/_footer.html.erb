@@ -7,12 +7,16 @@
       <div class="col-md-12">
         <div class=" col-xs-12 col-sm-8 col-md-4 center">
           <ul class=" footer-links">
+            <% if content.fb_username.empty?%>
+              <li style="display:none;"><a href="https://www.facebook.com/<%= content.fb_username%>"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+            <%else%>
+              <li><a href="https://www.facebook.com/<%= content.fb_username%>"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+            <%end%>
+              <li><a href="https://www.instagram.com/<%= content.ig_username%>"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+              <li><a href="https://twitter.com/<%= content.twitter_username%>"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+              <li><a href="https://linkedin.com/in/<%= content.in_username%>"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+              <li><a href="https://www.pinterest.com/<%= content.pin_username%>"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
 
-            <li><a href="https://www.facebook.com/<%= content.fb_username%>"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-            <li><a href="https://www.instagram.com/<%= content.ig_username%>"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-            <li><a href="https://twitter.com/<%= content.twitter_username%>"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-            <li><a href="https://linkedin.com/in/<%= content.in_username%>"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-            <li><a href="https://www.pinterest.com/<%= content.pin_username%>"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
 
           </ul>
         </div>
