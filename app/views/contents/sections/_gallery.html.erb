@@ -1,46 +1,12 @@
-<div id="gallery" class="gallery-container container-fluid">
-  <div class="grid">
-    <div class="grid-sizer"></div>
-    <a data-toggle="modal" data-target="#first-img"><div class="grid-item caption gallery-img">
-      <img class="img-responsive" src="assets/g1.jpg" alt="" />
-      <figcaption>
-        <h2 class="after">Space Blue</h2>
-      </figcaption>
-    </div></a>
-
-    <!-- <a data-toggle="modal" data-target="#second-img"><div class="grid-item caption gallery-img">
-      <img class="img-responsive" src="assets/g3.jpg" alt="" />
-      <figcaption>
-        <h2 class="after">Carvy Cases</h2>
-      </figcaption>
-    </div></a>
-
-    <a data-toggle="modal" data-target="#third-img"><div class="grid-item caption gallery-img">
-      <img class="img-responsive" src="assets/g2.jpg" alt="" />
-      <figcaption>
-        <h2 class="after">Custom Cleats</h2>
-      </figcaption>
-    </div></a>
-
-    <a data-toggle="modal" data-target="#fourth-img"><div class="grid-item caption gallery-img">
-      <img class="img-responsive" src="assets/g5.jpg" alt="" />
-      <figcaption>
-        <h2 class="after">Speed of Light Yoyo</h2>
-      </figcaption>
-    </div></a>
-    <a data-toggle="modal" data-target="#fith-img"><div class="grid-item caption gallery-img">
-      <img class="img-responsive" src="assets/g4.jpg" alt="" />
-      <figcaption>
-        <h2 class="after">EXE iPhone Cases</h2>
-      </figcaption>
-    </div></a>
-
-    <a data-toggle="modal" data-target="#sixth-img"><div class="grid-item caption gallery-img">
-      <img class="img-responsive" src="assets/g6.jpg" alt="" />
-      <figcaption>
-        <h2 class="after">Splash Yoyo</h2>
-      </figcaption>
-    </div></a> -->
-
-  </div>
+<div id="gallery" class="container-fluid">
+  <% @portfolios.each do |portfolio|%>
+    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+      <div class="hovereffect">
+          <%= link_to (image_tag portfolio.portfolios_img.url, class: "img-responsive"), portfolio%>
+            <div class="overlay">
+              <h2><%= portfolio.title %></h2>
+            </div>
+      </div>
+    </div>
+  <%end%>
 </div>
