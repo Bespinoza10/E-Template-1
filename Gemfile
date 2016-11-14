@@ -28,6 +28,7 @@ gem 'font-awesome-rails', '~> 4.7'
 gem 'bootstrap-sass'
 
 gem 'paperclip'
+gem 'devise'
 
 gem 'aws-sdk', '~> 1.6'
 # Use ActiveModel has_secure_password
