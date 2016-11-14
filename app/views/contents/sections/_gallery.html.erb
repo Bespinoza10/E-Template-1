@@ -1,8 +1,8 @@
 <div id="gallery" class="container-fluid">
   <% @portfolios.each do |portfolio|%>
-    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+    <div class="portfolios col-lg-4 col-md-4 col-sm-6 col-xs-12">
       <div class="hovereffect">
-          <%= link_to (image_tag portfolio.portfolios_img.url, class: "img-responsive"), portfolio%>
+          <%= link_to (image_tag portfolio.portfolios_img.url, class: "img-responsive p-img"), portfolio%>
             <div class="overlay">
               <h2><%= portfolio.title %></h2>
               <hr>
