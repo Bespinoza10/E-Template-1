@@ -15,7 +15,7 @@
     </div>
 
     <div class="modal fade" id="<%=portfolio.id%>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-      <div class="modal-dialog" role="document">
+      <div class="gallery-modal modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -31,10 +31,15 @@
         </div>
       </div>
     </div>
+    <script type="text/javascript">
+    $('#<%=portfolio.id%>').on('show.bs.modal', function () {
+     $('#gallery').addClass('blur');
+    })
+
+    $('#<%=portfolio.id%>').on('hide.bs.modal', function () {
+     $('#gallery').removeClass('blur');
+    })
+    </script>
   <%end%>
   <a><%= link_to "New Portfolio", new_portfolio_path(@portfolio), {class: "btn btn-primary"} %></a>
 </div>
-
-<% @portfolios.each do |portfolio|%>
-
-<%end%>

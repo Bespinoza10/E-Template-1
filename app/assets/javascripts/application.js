@@ -41,16 +41,7 @@ $(document).ready(function(){
   });
 });
 
-// $(function(){
-//   $(window).scroll(function() {
-//      if($(window).scrollTop() >= 100) {
-//        $('nav').addClass('shrink-nav');
-//      }
-//     else {
-//       $('nav').removeClass('shrink-nav');
-//     }
-//   });
-// });
+
 $(window).scroll(function() {
   if ($(document).scrollTop() > 50) {
     $('nav').addClass('shrink');
@@ -58,8 +49,6 @@ $(window).scroll(function() {
     $('nav').removeClass('shrink');
   }
 });
-
-
 
 $(document).ready(function(){
   setTimeout(function(){
