@@ -5,8 +5,12 @@
           <%= link_to (image_tag portfolio.portfolios_img.url, class: "img-responsive"), portfolio%>
             <div class="overlay">
               <h2><%= portfolio.title %></h2>
+              <hr>
+              <p class="text-center"><%= truncate(portfolio.description, length: 80)%></p>
             </div>
       </div>
+      <a><%= link_to "Edit Portfolio", edit_portfolio_path(portfolio), {class: "btn btn-primary"} %></a>
     </div>
   <%end%>
+  <a><%= link_to "New Portfolio", new_portfolio_path(@portfolio), {class: "btn btn-primary"} %></a>
 </div>
