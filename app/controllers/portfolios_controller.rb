@@ -32,7 +32,7 @@ class PortfoliosController < ApplicationController
 
   def destroy
     @portfolio.destroy
-    redirect_to portfolio_path
+    redirect_to root_path
   end
 
   private
