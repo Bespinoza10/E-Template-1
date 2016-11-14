@@ -41,9 +41,11 @@
               <li><a href="#">Services</a></li>
               <li><a href="#">Portfolio</a></li>
               <li><a href="#">Contact</a></li>
-              <li><a role="button" data-toggle="collapse" data-target="#loginDrop" aria-expanded="false"    aria-controls="collapseExample">
-                Login
-              </a></li>
+              <% if user_signed_in? %>
+                <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "btn-border" %></li>
+              <%else%>
+                <li><a href="<%= new_user_session_path %>">Login</a><li>
+              <%end%>
 
             </ul>
           </div>

@@ -7,14 +7,25 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <% if notice %>
+    <div id="notice-wrapper">
+      <p class="notice"><%= notice %></p>
+    </div>
+  <%elsif alert%>
+    <div id="notice-wrapper">
+      <p class="alert"><%= alert %></p>
+    </div>
+  <%end%>
   <nav class="shrink-nav navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
       <div class="col-md-12">
       </div>
-      <a class="btn btn-border" role="button" data-toggle="collapse" href="#nav-edit" aria-expanded="false" aria-controls="collapseExample">
-        Editar Navegacion
-      </a>
+
+      <% if user_signed_in? %>
+        <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "btn-border" %>
+      <%end%>
+
     </div>
 
     <!-- NAV STARTS -->
