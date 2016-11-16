@@ -5,5 +5,7 @@
   <%= render partial: 'contents/sections/gallery'%>
   <%= render partial: 'contents/sections/contact'%>
   <%= render partial: 'contents/sections/footer'%>
-  <a><%= link_to "Edit", edit_content_path(content), {class: "btn sendbtn"} %></a>
+  <% if user_signed_in? %>
+    <a><%= link_to "Edit", edit_content_path(content), {class: "btn sendbtn"} %></a>
+  <%end%>
 <%end%>
