@@ -12,7 +12,10 @@
 
     <div class="form-group">
       <%= f.label :portfolios_img %>
-      <%= f.file_field :portfolios_img, class: "validate" %>
+      <% if @portfolio.portfolios_img.exists? %>
+        <%= image_tag @portfolio.portfolios_img.url(:thumb) %>
+      <%end%>
+      <%= f.file_field :portfolios_img, class: "validate", placeholder:"@portfolio.portfolios_img_file_name" %>
     </div>
 
     <div class="form-group">

@@ -4,6 +4,7 @@ class PortfoliosController < ApplicationController
 
   def new
     @portfolio = Portfolio.new
+    @contents = Content.all
   end
 
   def create
@@ -17,6 +18,7 @@ class PortfoliosController < ApplicationController
   end
 
   def edit
+    @contents = Content.all
   end
 
   def update
