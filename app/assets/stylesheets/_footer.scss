@@ -4,7 +4,9 @@
   height: 150px;
   .footer-links{
     color:$white;
-    padding-top:5%;
+    padding-top:2%;
+    text-align: center;
+
     .fa{
       font-size: 30px;
     }
@@ -14,6 +16,7 @@
     }
     a{
       letter-spacing: 2px;
+      padding-right: 30px;
       color: $white;
       @include transition(all .4s);
       &:hover{

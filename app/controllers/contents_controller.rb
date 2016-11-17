@@ -23,6 +23,7 @@ class ContentsController < ApplicationController
   end
 
   def edit
+    @contents = Content.all
   end
 
   def update
