@@ -1,2 +1,37 @@
-Edit
-<%= render partial: 'form'%>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#form-btns a').addClass('inactive');
+    $('.form-container').hide();
+
+    $('#form-btns a').click(function(){
+      var t = $(this).attr('id');
+      if($(this).hasClass('inactive')){ //this is the start of our condition
+        $('#form-btns a').addClass('inactive');
+        $(this).removeClass('inactive');
+        $('.form-container').hide();
+        $('#'+ t + 'C').fadeIn('slow');
+      }
+    });
+  });
+</script>
+
+<div class="container-fluid">
+  <div class="container">
+    <h1 class="text-center">Select what you want to edit</h1>
+    <div class="row">
+      <div class="col-md-12 program-content">
+        <div id="form-btns" class="col-md-5 center-block">
+          <a id="btn1" class="btn btn-view-more">FULL</a>
+          <a id="btn2" class="btn btn-view-more">Header</a>
+        </div>
+
+      <div class="col-md-10 center-block form-container" id="btn1C">
+        <%= render 'form' %>
+      </div>
+      <div class="col-md-10 center-block form-container" id="btn2C">
+        <%= render 'headerEdit' %>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>

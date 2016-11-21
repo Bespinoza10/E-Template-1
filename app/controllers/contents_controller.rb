@@ -27,6 +27,7 @@ class ContentsController < ApplicationController
   end
 
   def update
+
     if @content.update content_params
       redirect_to root_path, notice: "You Updated: #{@content.name}."
     else
