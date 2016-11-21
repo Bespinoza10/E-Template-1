@@ -1,6 +1,12 @@
 <% @contents.each do |content|%>
   <section id="contact">
-    <div id="google-maps" class="container-fluid">
+    <div class="container-fluid" style="background: url('<%= content.contact_bg.url%>');
+      height: 100%;
+      background-attachment: fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      background-size: cover;
+      -o-background-size: cover;">
       <div class="container padding-section">
         <div class="col-md-6 center">
           <div class="row contact-heading">

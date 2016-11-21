@@ -4,6 +4,7 @@ class ServicesController < ApplicationController
 
   def new
     @service = Service.new
+    @contents = Content.all
   end
 
   def create
@@ -17,6 +18,7 @@ class ServicesController < ApplicationController
   end
 
   def edit
+    @contents = Content.all
   end
 
   def update

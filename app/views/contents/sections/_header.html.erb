@@ -1,7 +1,21 @@
 <% @contents.each do |content|%>
-  <header id="home" class="hero">
+  <header id="home" class="hero" style="background: linear-gradient(
+                       rgba(20,20,20, .5),
+                       rgba(20,20,20, .5)),
+                       url( '<%= content.header_bg.url %>');
+  background-attachment: fixed;
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  text-align: center;
+  color: white;
+  height: 100vh;
+  margin-top: -20px;">
     <div class="col-md-10 hero-caption center">
       <h1><%= content.header_title %></h1>
+      <%= link_to "Edit Header Section", edit_content_path(content), {class: "btn btnfos"} %>
     </div>
   </header>
 <%end%>
