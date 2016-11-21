@@ -1,5 +1,5 @@
 class ContentsController < ApplicationController
-  before_action :find_content, only: [:show, :edit, :update, :destroy]
+  before_action :find_content, only: [:show, :edit, :update, :destroy, :ledit]
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
@@ -24,6 +24,8 @@ class ContentsController < ApplicationController
 
   def edit
     @contents = Content.all
+    @services = Service.all.order("created_at asc")
+    @portfolios = Portfolio.all.order("created_at asc")
   end
 
   def update
