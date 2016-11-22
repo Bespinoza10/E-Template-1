@@ -1,0 +1,38 @@
+<div class="col-md-10 center-block upcoming-programs-form padding-bottom-top">
+  <h1 style="text-align: center;">Edit Social Media Links</h1>
+  <%= form_for @content do |f| %>
+    <% if @content.errors.any?%>
+      <h2><%= pluralize(@content.errors.count, "error") %> prevented this client from saving:</h2>
+      <ul>
+        <% @content.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <%end%>
+      </ul>
+    <%end%>
+
+    <div class="form-group">
+      <%= f.label :fb_username %>
+      <%= f.text_field :fb_username, {class: 'form-control form-input'} %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :ig_username %>
+      <%= f.text_field :ig_username, {class: 'form-control form-input'} %>
+    </div>
+    <div class="form-group">
+      <%= f.label :twitter_username %>
+      <%= f.text_field :twitter_username, {class: 'form-control form-input'} %>
+    </div>
+    <div class="form-group">
+      <%= f.label :in_username %>
+      <%= f.text_field :in_username, {class: 'form-control form-input'} %>
+    </div>
+    <div class="form-group">
+      <%= f.label :pin_username %>
+      <%= f.text_field :pin_username, {class: 'form-control form-input'} %>
+    </div>
+
+    <button type="submit" class="btn sendbtn">Submit</button>
+
+  <%end%>
+</div>
