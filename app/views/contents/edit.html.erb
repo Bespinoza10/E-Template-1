@@ -1,33 +1,15 @@
-<script type="text/javascript">
-  $(document).ready(function() {
-    $('#form-btns a').addClass('inactive');
-    $('.form-container').hide();
-
-    $('#form-btns a').click(function(){
-      var t = $(this).attr('id');
-      if($(this).hasClass('inactive')){ //this is the start of our condition
-        $('#form-btns a').addClass('inactive');
-        $(this).removeClass('inactive');
-        $('.form-container').hide();
-        $('#'+ t + 'C').fadeIn('slow');
-      }
-    });
-  });
-</script>
-
 <div class="container-fluid">
   <div class="container">
-    <h1 class="text-center">Select what you want to edit</h1>
     <div class="row">
       <div class="col-md-12 program-content">
-        <div id="form-btns">
+        <!-- <div id="form-btns">
           <a id="btn1" class="btn btn-view-more">Header</a>
           <a id="btn3" class="btn btn-view-more">Services</a>
           <a id="btn2" class="btn btn-view-more">Slogan</a>
           <a id="btn4" class="btn btn-view-more">Portfolio</a>
           <a id="btn5" class="btn btn-view-more">Contact</a>
           <a id="btn6" class="btn btn-view-more">Footer</a>
-        </div>
+        </div> -->
 
       <div class="col-md-10 center-block form-container" id="btn1C">
         <%= render 'headerEdit' %>
