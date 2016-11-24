@@ -1,5 +1,5 @@
-<div class="col-md-10 center-block upcoming-programs-form padding-bottom-top">
-  <h1 style="text-align: center;">New Service</h1>
+<div class="col-md-6 center service-form">
+  <h1 class="padding-section" style="text-align: center;">Edit "<%= @service.title %>"</h1>
   <%= form_for @service do |f| %>
     <% if @service.errors.any?%>
       <h2><%= pluralize(@service.errors.count, "error") %> prevented this client from saving:</h2>
@@ -11,8 +11,13 @@
     <%end%>
 
     <div class="form-group">
+      <% if @service.services_img.exists? %>
+        <%= image_tag @service.services_img.url(:medium) %>
+      <%end%>
+      <br>
       <%= f.label :services_img %>
       <%= f.file_field :services_img, class: "validate" %>
+
     </div>
 
     <div class="form-group">
