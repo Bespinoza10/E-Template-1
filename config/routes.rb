@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'contents#index'
   resources :contents
+  resources :headers
   # resources :services, :path_names => { :edit => 'update' }
   resources :services
   resources :portfolios

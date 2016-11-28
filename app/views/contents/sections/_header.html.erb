@@ -1,8 +1,8 @@
-<% @contents.each do |content|%>
+<% @headers.each do |header|%>
   <header id="home" class="hero" style="background: linear-gradient(
                        rgba(20,20,20, .5),
                        rgba(20,20,20, .5)),
-                       url( '<%= content.header_bg.url %>');
+                       url( '<%= header.header_bg.url %>');
   background-attachment: fixed;
   background-position: center center;
   -webkit-background-size: cover;
@@ -14,7 +14,10 @@
   height: 100vh;
   margin-top: -20px;">
     <div class="col-md-10 hero-caption center">
-      <h1><%= content.header_title %></h1>
+      <h1><%= header.title %></h1>
     </div>
+    <% if user_signed_in? %>
+      <a><%= link_to "Edit", edit_header_path(header), {class: "btn btn-border"} %></a>
+    <%end%>
   </header>
 <%end%>

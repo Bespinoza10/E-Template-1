@@ -1,0 +1,30 @@
+<div class="col-md-6 center header-form">
+
+  <%= form_for @header do |f| %>
+    <% if @header.errors.any?%>
+      <h2><%= pluralize(@header.errors.count, "error") %> prevented this client from saving:</h2>
+      <ul>
+        <% @header.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <%end%>
+      </ul>
+    <%end%>
+
+    <div class="form-group">
+      <% if @header.header_bg.exists? %>
+        <%= image_tag @header.header_bg.url(:medium) %>
+      <%end%>
+      <br>
+      <%= f.label :header_bg %>
+      <%= f.file_field :header_bg, class: "validate" %>
+
+    </div>
+
+    <div class="form-group col-md-3">
+      <%= f.label :title %>
+      <%= f.text_field :title, {class: 'form-control form-input'} %>
+    </div>
+    <button type="submit" class="btn sendbtn">Submit</button>
+
+  <%end%>
+</div>
