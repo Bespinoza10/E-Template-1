@@ -1,8 +1,8 @@
-<% @contents.each do |content|%>
+<% @headers.each do |header|%>
   <header id="home" class="hero" style="background: linear-gradient(
                        rgba(20,20,20, .5),
                        rgba(20,20,20, .5)),
-                       url( '<%= content.header_bg.url %>');
+                       url( '<%= header.header_bg.url %>');
   background-attachment: fixed;
   background-position: center center;
   -webkit-background-size: cover;
@@ -14,7 +14,60 @@
   height: 100vh;
   margin-top: -20px;">
     <div class="col-md-10 hero-caption center">
-      <h1><%= content.header_title %></h1>
+      <h1><%= header.title %></h1>
     </div>
+    <% if user_signed_in? %>
+      <a class="btn-border" data-toggle="modal" data-target="#myModal">Edit</a>
+
+      <!-- Modal -->
+      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+            </div>
+            <div class="modal-body">
+
+
+              <div class="col-md-6 center header-form">
+                <%= form_for header do |f| %>
+                  <% if header.errors.any?%>
+                    <h2><%= pluralize(header.errors.count, "error") %> prevented this client from saving:</h2>
+                    <ul>
+                      <% header.errors.full_messages.each do |msg| %>
+                        <li><%= msg %></li>
+                      <%end%>
+                    </ul>
+                  <%end%>
+
+                  <div class="form-group">
+                    <% if header.header_bg.exists? %>
+                      <%= image_tag header.header_bg.url(:medium) %>
+                    <%end%>
+                    <br>
+                    <%= f.label :header_bg %>
+                    <%= f.file_field :header_bg, class: "validate" %>
+
+                  </div>
+
+                  <div class="form-group">
+                    <%= f.label :title %>
+                    <%= f.text_field :title, {class: 'form-control form-input'} %>
+                  </div>
+
+
+                  <button type="submit" class="btn sendbtn">Submit</button>
+
+                <%end%>
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <%end%>
   </header>
 <%end%>
