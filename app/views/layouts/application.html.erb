@@ -55,8 +55,24 @@
         </div><!-- /.container -->
       </div>
     </nav>
-  <%else%>
+  <% elsif current_page?(edit_content_path) %>
+    <script type="text/javascript">
+    // EDIT MODE
+    $(document).ready(function() {
+      $('#form-btns a').addClass('inactive');
+      $('.form-container').hide();
 
+      $('#form-btns a').click(function(){
+        var t = $(this).attr('id');
+        if($(this).hasClass('inactive')){ //this is the start of our condition
+          $('#form-btns a').addClass('inactive');
+          $(this).removeClass('inactive');
+          $('.form-container').hide();
+          $('#'+ t + 'C').fadeIn('slow');
+        }
+      });
+    });
+    </script>
     <!-- MINIMIZED 2nd Nav -->
     <nav id="second-nav" class="shrink-nav navbar navbar-default">
       <div class="container-fluid">
@@ -102,13 +118,5 @@
 
 
 <%= yield %>
-<script type="text/javascript">
-  $('.grid').masonry({
-    // options
-    itemSelector: '.grid-item',
-    columnWidth: 200
-  });
-
-  </script>
 </body>
 </html>

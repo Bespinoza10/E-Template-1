@@ -57,19 +57,3 @@ $(document).ready(function(){
     })
   }, 3000);
 });
-
-// EDIT MODE
-$(document).ready(function() {
-  $('#form-btns a').addClass('inactive');
-  $('.form-container').hide();
-
-  $('#form-btns a').click(function(){
-    var t = $(this).attr('id');
-    if($(this).hasClass('inactive')){ //this is the start of our condition
-      $('#form-btns a').addClass('inactive');
-      $(this).removeClass('inactive');
-      $('.form-container').hide();
-      $('#'+ t + 'C').fadeIn('slow');
-    }
-  });
-});
