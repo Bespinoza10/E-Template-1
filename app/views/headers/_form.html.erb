@@ -1,5 +1,4 @@
 <div class="col-md-6 center header-form">
-
   <%= form_for @header do |f| %>
     <% if @header.errors.any?%>
       <h2><%= pluralize(@header.errors.count, "error") %> prevented this client from saving:</h2>
