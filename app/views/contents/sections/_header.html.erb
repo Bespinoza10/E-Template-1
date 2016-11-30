@@ -46,7 +46,7 @@
                     <div class="form-group col-md-12">
                       <% if header.header_bg.exists? %>
                         Current Photo
-                        <%= image_tag header.header_bg.url, {class: "img-responsive"} %>
+                        <%= image_tag header.header_bg.url, {class: "img-responsive current_image"} %>
                       <%end%>
                     </div>
 
@@ -60,7 +60,9 @@
                       <%= f.text_field :title, {class: 'form-control form-input'} %>
                     </div>
 
-                    <button type="submit" class="btn btn-border-purple">Submit</button>
+                    <div class="col-md-12 padding-section-elements-bottom">
+                      <button type="submit" class="btn btn-border-purple-submit">Submit</button>
+                    </div>
 
                   <%end%>
                 </div>

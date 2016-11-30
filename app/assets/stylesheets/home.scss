@@ -59,10 +59,12 @@ a{
   }
 }
 
-.btn-border-purple{
-  border: 1px solid $purple;
+.btn-border-purple-submit{
+  border: 2px solid $purple;
   background: none;
   color: #000;
+  text-align: center;
+  width: 100%;
   padding: 8px 10px;
   font-size: 18px;
   letter-spacing: 2px;
@@ -76,6 +78,7 @@ a{
 }
 
 .btn-border-edit{
+  border-radius: 3px;
   border: 1px solid $white;
   background: none;
   color: #fff;
@@ -175,7 +178,7 @@ textarea.form-control{
 
 
 .btn{
-  border-radius: 0px;
+  border-radius: 3px;
 }
 
 .btn-big{

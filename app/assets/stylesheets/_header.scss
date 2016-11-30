@@ -13,12 +13,15 @@
 .modal .modal-dialog{
   width: 50%;
   .modal-content{
-
+    position: absolute;
     color: #000;
     border-radius: 0px;
     border:none;
   } .modal-body{
     padding-top: 0px;
+    .current_image{
+      border-radius: 3px;
+    }
   }
 }
 .modal-backdrop {
