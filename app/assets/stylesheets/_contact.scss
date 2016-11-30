@@ -30,22 +30,6 @@
       @include transition(all 1s);
     }
   }
-
-  .btn-contact{
-    margin-top: 20px;
-    border-radius: 0px;
-    background: none;
-    border: 2px solid $footer-black;
-    padding: 1% 3%;
-    @include transition(all .4s);
-
-    &:hover{
-      letter-spacing: 3px;
-      border-color: $orange;
-      background: $orange;
-      @include transition(all .4s);
-    }
-  }
 }
 
 // .google-maps{
