@@ -94,6 +94,56 @@ a{
     @include transition(all .6s);
   }
 }
+.btn-border-orange-small{
+  border: 2px solid $orange;
+  background: none;
+  color: #000;
+  text-align: center;
+  padding: 8px 10px;
+  font-size: 18px;
+  letter-spacing: 2px;
+  font-weight: 200;
+  @include transition(all .6s);
+  &:hover{
+    background: $orange;
+    color: #fff;
+    @include transition(all .6s);
+  }
+}
+.btn-border-red-small{
+  border: 2px solid rgba(240, 8, 8, 0.63);
+  background: none;
+  color: #000;
+  text-align: center;
+  padding: 8px 10px;
+  font-size: 18px;
+  letter-spacing: 2px;
+  font-weight: 200;
+  @include transition(all .6s);
+  &:hover{
+    background: rgba(240, 8, 8, 0.63);
+    color: #fff;
+    @include transition(all .6s);
+  }
+}
+
+.btn-border-blue{
+  border: 2px solid rgba(47, 108, 244, 0.77);
+  background: none;
+  color: #000;
+  text-align: center;
+  width:100%;
+  padding: 8px 10px;
+  font-size: 18px;
+  letter-spacing: 2px;
+  font-weight: 200;
+  @include transition(all .6s);
+  &:hover{
+    background: rgba(47, 108, 244, 0.77);
+    color: #fff;
+    @include transition(all .6s);
+  }
+}
 
 .btn-border-edit{
   border-radius: 3px;

@@ -18,11 +18,17 @@
       <p class="text-center">
         <%= truncate(service.description, length: 200)%>
       </p>
-      <% if user_signed_in? %>
-        <a><%= link_to "Delete", service_path(service), method: :delete, data: { confirm: "Are you sure you want to delete this poor lonely service? If so HaHa poor service!" }, class: "btn btn-danger" %></a>
-        <a><%= link_to "Edit Service", edit_service_path(service), {class: "btn sendbtn"} %></a>
-        <a><%= link_to "New Service", new_service_path(@service), {class: "btn sendbtn"} %></a>
-      <%end%>
+      <div class="center">
+        <% if user_signed_in? %>
+          <a><%= link_to "Delete", service_path(service), method: :delete, data: { confirm: "Are you sure you want to permanently delete: #{service.title}?" }, class: "btn btn-border-red-small" %></a>
+          <a><%= link_to "Edit Service", edit_service_path(service), {class: "btn btn-border-orange-small"} %></a>
+        <%end%>
+      </div>
     </div>
   <%end%>
-</div>
+  </div>
+  <div class="col-md-6 center padding-section-elements-bottom">
+    <% if user_signed_in? %>
+      <a><%= link_to "New Service", new_service_path(@service), {class: "btn btn-border-blue"} %></a>
+    <%end%>
+  </div>
