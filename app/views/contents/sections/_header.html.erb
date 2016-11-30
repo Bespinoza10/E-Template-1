@@ -9,65 +9,70 @@
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
-  text-align: center;
   color: white;
   height: 100vh;
   margin-top: -20px;">
+
     <div class="col-md-10 hero-caption center">
       <h1><%= header.title %></h1>
-    </div>
-    <% if user_signed_in? %>
-      <a class="btn-border" data-toggle="modal" data-target="#myModal">Edit</a>
 
-      <!-- Modal -->
-      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-            </div>
-            <div class="modal-body">
-
-
-              <div class="col-md-6 center header-form">
-                <%= form_for header do |f| %>
-                  <% if header.errors.any?%>
-                    <h2><%= pluralize(header.errors.count, "error") %> prevented this client from saving:</h2>
-                    <ul>
-                      <% header.errors.full_messages.each do |msg| %>
-                        <li><%= msg %></li>
-                      <%end%>
-                    </ul>
-                  <%end%>
-
-                  <div class="form-group">
-                    <% if header.header_bg.exists? %>
-                      <%= image_tag header.header_bg.url(:medium) %>
-                    <%end%>
-                    <br>
-                    <%= f.label :header_bg %>
-                    <%= f.file_field :header_bg, class: "validate" %>
-
-                  </div>
-
-                  <div class="form-group">
-                    <%= f.label :title %>
-                    <%= f.text_field :title, {class: 'form-control form-input'} %>
-                  </div>
-
-
-                  <button type="submit" class="btn sendbtn">Submit</button>
-
-                <%end%>
+      <!-- If user is signed in then show the edit button and its modal when clicked -->
+        <!-- Edit Start -->
+      <% if user_signed_in? %>
+        <div class="text-center">
+          <a class="btn-border-edit" data-toggle="modal" data-target="#headerModal">Edit</a>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="headerModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h2 class="modal-title" id="myModalLabel">Edit Your Header</h2>
               </div>
+              <div class="modal-body">
 
+                <div class="col-md-10 center header-form">
+                  <%= form_for header do |f| %>
+                    <% if header.errors.any?%>
+                      <h2><%= pluralize(header.errors.count, "error") %> prevented this client from saving:</h2>
+                      <ul>
+                        <% header.errors.full_messages.each do |msg| %>
+                          <li><%= msg %></li>
+                        <%end%>
+                      </ul>
+                    <%end%>
 
+                    <div class="form-group col-md-12">
+                      <% if header.header_bg.exists? %>
+                        Current Photo
+                        <%= image_tag header.header_bg.url, {class: "img-responsive current_image"} %>
+                      <%end%>
+                    </div>
+
+                    <div class="form-group col-md-6">
+                      <%= f.label :header_bg %>
+                      <%= f.file_field :header_bg, class: "validate" %>
+                    </div>
+
+                    <div class="form-group col-md-6">
+                      <%= f.label :title %>
+                      <%= f.text_field :title, {class: 'form-control form-input'} %>
+                    </div>
+
+                    <div class="col-md-12 padding-section-elements-bottom">
+                      <button type="submit" class="btn btn-border-purple-submit">Submit</button>
+                    </div>
+
+                  <%end%>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-    <%end%>
+      <%end%>
+      <!-- Edit END -->
+    </div>
   </header>
 <%end%>

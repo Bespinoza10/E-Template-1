@@ -59,6 +59,42 @@ a{
   }
 }
 
+.btn-border-purple-submit{
+  border: 2px solid $purple;
+  background: none;
+  color: #000;
+  text-align: center;
+  width: 100%;
+  padding: 8px 10px;
+  font-size: 18px;
+  letter-spacing: 2px;
+  font-weight: 200;
+  @include transition(all .6s);
+  &:hover{
+    background: $purple;
+    color: #fff;
+    @include transition(all .6s);
+  }
+}
+
+.btn-border-edit{
+  border-radius: 3px;
+  border: 1px solid $white;
+  background: none;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 18px;
+  letter-spacing: 3px;
+  font-weight: 200;
+  @include transition(all .6s);
+  &:hover{
+    border-width: 4px;
+    color: #fff;
+    letter-spacing: 6px;
+    @include transition(all .6s);
+  }
+}
+
 .btnfos{
   padding: 10px 20px;
   color: #fff;
@@ -89,13 +125,17 @@ a{
 }
 
 input.form-control, .form-control[readonly]{
-  border-radius: 0px;
+  border-radius: 2px;
   background-color: transparent;
-  border-bottom: 3px solid #d1d1d1;
-  border-top: none;
-  border-left: none;
-  border-right: none;
+  border: 2px solid #d1d1d1;
+  padding: 20px 10px 20px 10px;
+  // border-top: none;
+  // border-left: none;
+  // border-right: none;
   box-shadow: none;
+  &:focus{
+    border-color: $purple;
+  }
 }
 textarea.form-control{
   border-bottom: 3px solid #d1d1d1;
@@ -138,7 +178,7 @@ textarea.form-control{
 
 
 .btn{
-  border-radius: 0px;
+  border-radius: 3px;
 }
 
 .btn-big{

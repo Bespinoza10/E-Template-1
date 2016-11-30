@@ -3,7 +3,27 @@
     top: 50vh;
     h1{
       font-size: 80px;
+      text-align: center;
       letter-spacing: 3px;
     }
+  }.modal .modal-dialog{
+    width: 30%
   }
+}
+.modal .modal-dialog{
+  width: 50%;
+  .modal-content{
+    position: absolute;
+    color: #000;
+    border-radius: 0px;
+    border:none;
+  } .modal-body{
+    padding-top: 0px;
+    .current_image{
+      border-radius: 3px;
+    }
+  }
+}
+.modal-backdrop {
+    background-color: $white;
 }
