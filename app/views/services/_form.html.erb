@@ -1,5 +1,5 @@
 <div class="col-md-6 center service-form">
-  <h1 class="padding-section" style="text-align: center;">Edit "<%= @service.title %>"</h1>
+  <h1 class="text-center">Edit <span class="service-name"><%= @service.title%></span></h1>
   <%= form_for @service do |f| %>
     <% if @service.errors.any?%>
       <h2><%= pluralize(@service.errors.count, "error") %> prevented this client from saving:</h2>
@@ -10,9 +10,9 @@
       </ul>
     <%end%>
 
-    <div class="form-group">
+    <div class="form-group col-md-12">
       <% if @service.services_img.exists? %>
-        <%= image_tag @service.services_img.url(:medium) %>
+        <%= image_tag @service.services_img.url(:thumb) %>
       <%end%>
       <br>
       <%= f.label :services_img %>
@@ -20,19 +20,25 @@
 
     </div>
 
-    <div class="form-group col-md-3">
+    <div class="form-group col-md-12">
       <%= f.label :title %>
       <%= f.text_field :title, {class: 'form-control form-input'} %>
     </div>
 
-    <div class="form-group col-md-9">
+    <div class="form-group col-md-12">
       <%= f.label :description %>
       <%= f.text_area :description, :rows => "4", class: 'form-control form-input' %>
     </div>
-    <button type="submit" class="btn sendbtn">Submit</button>
-    <% @contents.each do |content| %>
-       <%= link_to "Cancel", edit_content_path(content), {class: 'btn btn-primary'} %>
-    <%end%>
+
+    <div class="col-md-6">
+      <button type="submit" class="btn btn-border-purple-submit" style="margin-bottom:10px;">Submit</button>
+    </div>
+
+    <div class="col-md-6">
+      <% @contents.each do |content| %>
+         <%= link_to "Cancel", root_path, {class: 'btn btn-border-orange'} %>
+      <%end%>
+    </div>
 
   <%end%>
 </div>

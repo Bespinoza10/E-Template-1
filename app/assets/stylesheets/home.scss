@@ -64,7 +64,7 @@ a{
   background: none;
   color: #000;
   text-align: center;
-  width: 100%;
+  width:100%;
   padding: 8px 10px;
   font-size: 18px;
   letter-spacing: 2px;
@@ -72,6 +72,24 @@ a{
   @include transition(all .6s);
   &:hover{
     background: $purple;
+    color: #fff;
+    @include transition(all .6s);
+  }
+}
+
+.btn-border-orange{
+  border: 2px solid $orange;
+  background: none;
+  color: #000;
+  text-align: center;
+  width:100%;
+  padding: 8px 10px;
+  font-size: 18px;
+  letter-spacing: 2px;
+  font-weight: 200;
+  @include transition(all .6s);
+  &:hover{
+    background: $orange;
     color: #fff;
     @include transition(all .6s);
   }
@@ -124,7 +142,7 @@ a{
   -o-transition: .8s ease-in-out all;
 }
 
-input.form-control, .form-control[readonly]{
+textarea.form-control,input.form-control, .form-control[readonly]{
   border-radius: 2px;
   background-color: transparent;
   border: 2px solid #d1d1d1;
@@ -135,14 +153,8 @@ input.form-control, .form-control[readonly]{
   box-shadow: none;
   &:focus{
     border-color: $purple;
+    box-shadow: none;
   }
-}
-textarea.form-control{
-  border-bottom: 3px solid #d1d1d1;
-  border-top: none;
-  border-right: 1px solid #d1d1d1;
-  border-left: 1px solid #d1d1d1;
-  box-shadow: none;
 }
 
 .text-center{

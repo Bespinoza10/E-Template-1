@@ -20,12 +20,8 @@
   <% if current_page?(root_path) %>
     <!-- MINIMIZED -->
     <nav class="shrink-nav navbar navbar-default navbar-fixed-top">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <% if user_signed_in? %>
-            <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "btn-border" %>
-          <%end%>
-        </div>
+      <div class="container">
+
 
         <!-- NAV STARTS -->
         <div class="container">
@@ -49,6 +45,9 @@
               <li><a href="#services">Services</a></li>
               <li><a href="#gallery">Portfolio</a></li>
               <li><a href="#contact">Contact</a></li>
+              <% if user_signed_in? %>
+                <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "btn-border" %></li>
+              <%end%>
             </ul>
 
           </div><!-- /.navbar-collapse -->
