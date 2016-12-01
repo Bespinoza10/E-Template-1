@@ -1,6 +1,9 @@
 .hero{
   .hero-caption{
-    top: 50vh;
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+    line-height:1.5em;
     h1{
       font-size: 80px;
       text-align: center;
