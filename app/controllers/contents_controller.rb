@@ -6,6 +6,7 @@ class ContentsController < ApplicationController
     @contents = Content.all
     @headers = Header.all
     @services = Service.all.order("created_at asc")
+    @slogan = Slogan.all
     @portfolios = Portfolio.all.order("created_at asc")
   end
 

@@ -41,7 +41,7 @@ class SlogansController < ApplicationController
   end
 
   def find_slogan
-    @slogan = slogan.find(params[:id])
+    @slogan = Slogan.find(params[:id])
   end
 
 end

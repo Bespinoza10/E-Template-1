@@ -7,8 +7,52 @@
       <div class="col-md-6 center">
         <a class="btn btn-slogan-contact" href="#contact">Contact Us</a>
       </div>
+      <% if user_signed_in? %>
+        <div class="text-center">
+          <a class="btn-border-edit" data-toggle="modal" data-target="#sloganModal">Edit</a>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="sloganModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h2 class="modal-title" id="myModalLabel">Edit Your Header</h2>
+              </div>
+              <div class="modal-body">
 
-      <a class="btn btn-warning" data-toggle="modal" data-target="#slogan-modal">Editar Sobre Nosotros</a>
+                <div class="col-md-10 center">
+                  <%= form_for slogan do |f| %>
+                    <% if slogan.errors.any?%>
+                      <h2><%= pluralize(slogan.errors.count, "error") %> prevented this client from saving:</h2>
+                      <ul>
+                        <% slogan.errors.full_messages.each do |msg| %>
+                          <li><%= msg %></li>
+                        <%end%>
+                      </ul>
+                    <%end%>
+
+                    <div class="form-group col-md-12">
+                      <%= f.label :title %>
+                      <%= f.text_field :title, {class: 'form-control form-input'} %>
+                    </div>
+
+                    <div class="col-md-6">
+                      <button type="submit" class="btn btn-border-purple-submit" style="margin-bottom:10px;">Submit</button>
+                    </div>
+
+                    <div class="col-md-6">
+                      <%= link_to "Cancel", root_path, {class: 'btn btn-border-orange'} %>
+                    </div>
+
+                  <%end%>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <%end%>
+
     </div>
   </div>
 <%end%>
