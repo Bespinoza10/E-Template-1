@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161130162243) do
+ActiveRecord::Schema.define(version: 20161201171259) do
 
   create_table "contents", force: :cascade do |t|
     t.string   "name"
@@ -77,6 +77,12 @@ ActiveRecord::Schema.define(version: 20161130162243) do
     t.string   "contact_bg_content_type"
     t.integer  "contact_bg_file_size"
     t.datetime "contact_bg_updated_at"
+  end
+
+  create_table "slogans", force: :cascade do |t|
+    t.string   "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
