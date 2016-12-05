@@ -1,5 +1,5 @@
-<div class="col-md-10 center-block upcoming-programs-form padding-bottom-top">
-  <h1 style="text-align: center;">New portfolio</h1>
+<div class="col-md-10 center padding-section">
+  <h1 class="text-center padding-section-elements-bottom">Edit <span class="service-name"><%= @portfolio.title%></span> </h1>
   <%= form_for @portfolio do |f| %>
     <% if @portfolio.errors.any?%>
       <h2><%= pluralize(@portfolio.errors.count, "error") %> prevented this client from saving:</h2>
@@ -10,24 +10,37 @@
       </ul>
     <%end%>
 
-    <div class="form-group">
-      <%= f.label :portfolios_img %>
+    <div class="form-group col-md-12">
+
       <% if @portfolio.portfolios_img.exists? %>
-        <%= image_tag @portfolio.portfolios_img.url(:thumb) %>
+        <%= image_tag @portfolio.portfolios_img, class: "img-responsive" %>
       <%end%>
+      <br>
+      <%= f.label :portfolios_img %>
       <%= f.file_field :portfolios_img, class: "validate", placeholder:"@portfolio.portfolios_img_file_name" %>
     </div>
-
-    <div class="form-group">
+    <br>
+    <div class="form-group col-md-12">
       <%= f.label :title %>
       <%= f.text_field :title, {class: 'form-control form-input'} %>
     </div>
-
-    <div class="form-group">
+    <br>
+    <div class="form-group col-md-12">
       <%= f.label :description %>
       <%= f.text_area :description, {class: 'form-control form-input'} %>
     </div>
-    <button type="submit" class="btn sendbtn">Submit</button>
+
+
+    <div class="col-md-6">
+      <button type="submit" class="btn btn-border-purple-submit" style="margin-bottom:10px;">Submit</button>
+    </div>
+
+    <div class="col-md-6">
+      <% @contents.each do |content| %>
+         <%= link_to "Cancel", root_path, {class: 'btn btn-border-orange'} %>
+      <%end%>
+    </div>
+
 
   <%end%>
 </div>
