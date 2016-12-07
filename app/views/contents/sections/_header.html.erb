@@ -1,6 +1,6 @@
 <% @headers.each do |header|%>
   <% if header.header_bg.empty? %>
-    <a><%= link_to "Add a Header", new_header_path(@header), {class: "btn btn-border-blue"} %></a>
+    <a><%= link_to "Add a Header", new_header_path(header), {class: "btn btn-border-blue"} %></a>
   <%end%>
   <header id="home" class="hero" style="background: linear-gradient(
                        rgba(20,20,20, .5),
