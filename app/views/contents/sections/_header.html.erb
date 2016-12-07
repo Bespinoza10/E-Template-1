@@ -1,4 +1,7 @@
 <% @headers.each do |header|%>
+  <% if header.header_bg.empty? %>
+    <a><%= link_to "Add a Header", new_header_path(@header), {class: "btn btn-border-blue"} %></a>
+  <%end%>
   <header id="home" class="hero" style="background: linear-gradient(
                        rgba(20,20,20, .5),
                        rgba(20,20,20, .5)),
@@ -20,9 +23,6 @@
       <!-- If user is signed in then show the edit button and its modal when clicked -->
         <!-- Edit Start -->
       <% if user_signed_in? %>
-        <% if header.header_bg.empty? %>
-          <a><%= link_to "Add a Header", new_header_path(@header), {class: "btn btn-border-blue"} %></a>
-        <%end%>
         <div class="text-center">
           <a class="btn-border-edit" data-toggle="modal" data-target="#headerModal">Edit</a>
         </div>
