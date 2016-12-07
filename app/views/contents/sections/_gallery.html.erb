@@ -1,9 +1,4 @@
 <div id="gallery" class="container-fluid">
-  <h1 class="text-center padding-section-elements-top padding-section-elements-bottom">
-
-    Recent Work
-
-  </h1>
   <% @portfolios.each do |portfolio|%>
       <div class="portfolios col-lg-4 col-md-4 col-sm-6 col-xs-12">
         <div class="hovereffect">
@@ -15,11 +10,14 @@
                 <a class="btn btn-primary" data-toggle="modal" href="#<%=portfolio.id%>">View Project</a>
               </div>
         </div>
-        <% if user_signed_in? %>
-          <a><%= link_to "Edit Portfolio", edit_portfolio_path(portfolio), {class: "btn btn-primary"} %></a>
-          <a><%= link_to "Delete", portfolio_path(portfolio), method: :delete, data: { confirm: "Are you sure you want to delete this poor lonely Portfolio? If so HaHa poor Portfolio!" }, class: "btn btn-danger" %>
-          </a>
+
+        <div class="col-md-6 padding-section-elements-bottom" style="margin-top:10px;">
+          <% if user_signed_in? %>
+            <a><%= link_to "Edit Portfolio", edit_portfolio_path(portfolio), {class: "btn btn-border-orange-small"} %></a>
+            <a><%= link_to "Delete", portfolio_path(portfolio), method: :delete, data: { confirm: "Are you sure you want to delete this poor lonely Portfolio? If so HaHa poor Portfolio!" }, class: "btn btn-border-red-small" %>
+            </a>
         <%end%>
+      </div>
 
     </div>
 
@@ -41,7 +39,10 @@
       </div>
     </div>
   <%end%>
-  <% if user_signed_in? %>
-    <a><%= link_to "New Portfolio", new_portfolio_path(@portfolio), {class: "btn btn-primary"} %></a>
-  <%end%>
+  <div class="col-md-6 center padding-section-elements-bottom">
+    <% if user_signed_in? %>
+      <a><%= link_to "New Portfolio", new_portfolio_path(@portfolio), {class: "btn btn-border-blue"} %></a>
+    <%end%>
+  </div>
+
 </div>
