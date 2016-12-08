@@ -1,13 +1,5 @@
 <% @headers.each do |header|%>
-  <header id="home" class="hero" style="
-  <% if header.header_bg.exists? %>
-  background: linear-gradient(
-                       rgba(20,20,20, .5),
-                       rgba(20,20,20, .5)),
-                       url( '<%= header.header_bg.url %>');
-  <%else%>
-  background-image: url( '/assets/default-header.jpg');
-  <%end%>
+  <header id="home" class="hero" style="background-image: url( '/assets/default-header.jpg');
   background-attachment: fixed;
   background-position: center center;
   -webkit-background-size: cover;
