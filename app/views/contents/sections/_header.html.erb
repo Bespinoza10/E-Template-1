@@ -1,9 +1,12 @@
 <% @headers.each do |header|%>
   <header id="home" class="hero" style="
   <% if header.header_bg.exists? %>
-  background-image: url( 'assets/default-header.jpg');
+  background: linear-gradient(
+                       rgba(20,20,20, .5),
+                       rgba(20,20,20, .5)),
+                       url( '<%= header.header_bg.url %>');
   <%else%>
-
+  background-image: url( '/assets/default-header.jpg');
   <%end%>
   background-attachment: fixed;
   background-position: center center;
