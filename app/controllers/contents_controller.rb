@@ -47,8 +47,8 @@ class ContentsController < ApplicationController
   private
 
   def content_params
-    params.require(:content).permit(:name, :header_title, :services_title, :slogan_title, :about_title, :about_description,
-    :contact_title, :contact_subtitle, :fb_username, :ig_username, :twitter_username, :in_username, :pin_username, :header_bg, :contact_bg)
+    params.require(:content).permit(:name, :services_title,
+    :contact_title, :contact_subtitle, :fb_username, :ig_username, :twitter_username, :in_username, :pin_username, :contact_bg)
   end
 
   def find_content
