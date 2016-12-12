@@ -12,4 +12,5 @@ Rails.application.routes.draw do
   resources :services
   resources :slogans
   resources :portfolios
+  resources :contacts
 end
