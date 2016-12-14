@@ -1,6 +1,6 @@
-<% @contents.each do |content|%>
+<% @contacts.each do |contact|%>
   <section id="contact">
-    <div class="container-fluid" style="background: url('<%= content.contact_bg.url%>');
+    <div class="container-fluid" style="background: url('<%= contact.contact_bg.url%>');
       height: 100%;
       background-attachment: fixed;
       -webkit-background-size: cover;
@@ -11,12 +11,13 @@
         <div class="col-md-6 center">
           <div class="row contact-heading">
             <div class="col-lg-12 text-center padding-section">
-                <h2 class="section-heading"><%= content.contact_title%></h2>
-                <div class="col-sm-4 col-md-6 center">
-                  <hr class="heading-hr" style="border-top-color:#fff;">
-                </div>
+
+
+                <h2 class="section-heading"><%= contact.contact_title%></h2>
+                <hr class="heading-hr" style="border-top-color:#fff; opacity: 1; margin-top: -30px !important;">
                 <br>
-                <a href="https://goo.gl/maps/oNzCZQ6Ctts" target="_blank"><p class=" white"><%=content.contact_subtitle%></p></a>
+                <br>
+                <a href="https://goo.gl/maps/oNzCZQ6Ctts" target="_blank"><p class=" white"><%=contact.contact_subtitle%></p></a>
             </div>
           </div>
           <form name="sentMessage" id="contactForm" novalidate>

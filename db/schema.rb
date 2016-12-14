@@ -11,13 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161212213924) do
+ActiveRecord::Schema.define(version: 20161212214354) do
 
   create_table "contacts", force: :cascade do |t|
     t.string   "contact_title"
     t.string   "contact_subtitle"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.string   "contact_bg_file_name"
+    t.string   "contact_bg_content_type"
+    t.integer  "contact_bg_file_size"
+    t.datetime "contact_bg_updated_at"
   end
 
   create_table "contents", force: :cascade do |t|

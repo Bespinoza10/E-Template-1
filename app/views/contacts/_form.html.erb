@@ -1,0 +1,33 @@
+<div class="col-md-6 center contact-form">
+  <%= form_for @contact do |f| %>
+    <% if @contact.errors.any?%>
+      <h2><%= pluralize(@contact.errors.count, "error") %> prevented this client from saving:</h2>
+      <ul>
+        <% @contact.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <%end%>
+      </ul>
+    <%end%>
+
+    <div class="form-group">
+      <% if @contact.contact_bg.exists? %>
+        <%= image_tag @contact.contact_bg.url(:medium) %>
+      <%end%>
+      <br>
+      <%= f.label :contact_bg %>
+      <%= f.file_field :contact_bg, class: "validate" %>
+
+    </div>
+
+    <div class="form-group col-md-3">
+      <%= f.label :contact_title %>
+      <%= f.text_field :contact_title, {class: 'form-control form-input'} %>
+    </div>
+    <div class="form-group col-md-3">
+      <%= f.label :contact_subtitle %>
+      <%= f.text_field :contact_subtitle, {class: 'form-control form-input'} %>
+    </div>
+    <button type="submit" class="btn sendbtn">Submit</button>
+
+  <%end%>
+</div>

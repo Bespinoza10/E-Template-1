@@ -8,6 +8,7 @@ class ContentsController < ApplicationController
     @services = Service.all.order("created_at asc")
     @slogan = Slogan.all
     @portfolios = Portfolio.all.order("created_at asc")
+    @contacts = Contact.all
   end
 
   def new
@@ -48,7 +49,7 @@ class ContentsController < ApplicationController
 
   def content_params
     params.require(:content).permit(:name, :services_title,
-    :contact_title, :contact_subtitle, :fb_username, :ig_username, :twitter_username, :in_username, :pin_username, :contact_bg)
+    :fb_username, :ig_username, :twitter_username, :in_username, :pin_username)
   end
 
   def find_content
