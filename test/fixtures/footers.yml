@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  fb_username: MyString
+  ig_username: MyString
+  twitter_username: MyString
+  in_username: MyString
+  pin_username: MyString
+
+two:
+  fb_username: MyString
+  ig_username: MyString
+  twitter_username: MyString
+  in_username: MyString
+  pin_username: MyString
