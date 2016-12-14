@@ -22,7 +22,7 @@ class ContactsController < ApplicationController
 
   def update
     if @contact.update contact_params
-      redirect_to root_path, notice: "You Updated: #{@contact.title}."
+      redirect_to root_path, notice: "Contact Form Update Sucessful."
     else
       render 'edit'
     end

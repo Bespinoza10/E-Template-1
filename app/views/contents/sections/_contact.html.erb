@@ -11,8 +11,6 @@
         <div class="col-md-6 center">
           <div class="row contact-heading">
             <div class="col-lg-12 text-center padding-section">
-
-
                 <h2 class="section-heading"><%= contact.contact_title%></h2>
                 <hr class="heading-hr" style="border-top-color:#fff; opacity: 1; margin-top: -30px !important;">
                 <br>
@@ -51,10 +49,68 @@
                   <div id="success"></div>
                   <button type="submit" class="btn btn-contact">Send Message</button>
               </div>
-
-                <a class="btn btn-warning" data-toggle="modal" data-target="#contact-form-modal">Configurar Forma de Contacto</a>
             </div>
           </form>
+          <% if user_signed_in? %>
+            <div class="text-center">
+              <br>
+              <a class="btn-border-edit" data-toggle="modal" data-target="#contactModal">Edit</a>
+            </div>
+            <!-- Modal -->
+            <div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h2 class="modal-title" id="myModalLabel">Edit Your Header</h2>
+                  </div>
+                  <div class="modal-body">
+
+                    <div class="col-md-10 center">
+                      <%= form_for contact, :html => { :style => 'display: inline-block;'} do |f| %>
+                        <% if contact.errors.any?%>
+                          <h2><%= pluralize(contact.errors.count, "error") %> prevented this client from saving:</h2>
+                          <ul>
+                            <% contact.errors.full_messages.each do |msg| %>
+                              <li><%= msg %></li>
+                            <%end%>
+                          </ul>
+                        <%end%>
+
+                        <div class="form-group col-md-12">
+                          <% if contact.contact_bg.exists? %>
+                            <%= image_tag contact.contact_bg.url, class: "img-responsive" %>
+                          <%end%>
+                          <br>
+                          <%= f.label :contact_bg %>
+                          <%= f.file_field :contact_bg, class: "validate" %>
+
+                        </div>
+
+                        <div class="form-group col-md-6">
+                          <%= f.label :contact_title %>
+                          <%= f.text_field :contact_title, {class: 'form-control form-input'} %>
+                        </div>
+                        <div class="form-group col-md-6">
+                          <%= f.label :contact_subtitle %>
+                          <%= f.text_field :contact_subtitle, {class: 'form-control form-input'} %>
+                        </div>
+                        <div class="form-group col-md-6">
+                          <button type="submit" class="btn btn-border-purple-submit" style="margin-bottom:10px;">Submit</button>
+                        </div>
+
+                        <div class="form-group col-md-6">
+                          <%= link_to "Cancel", root_path, {class: 'btn btn-border-orange'} %>
+                        </div>
+
+                      <%end%>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          <%end%>
         </div>
       </div>
     </div>

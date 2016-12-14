@@ -16,21 +16,6 @@
     border-top-color: #000 !important;
     width: 60%;
   }
-
-  input, textarea{
-    background: rgba(#fff, 0.37);
-    border: 2px solid rgba(#ffffff, 0.95);
-    color: $footer-black;
-    font-weight: 100;
-    letter-spacing: 4px;
-    border-radius: 0px;
-    @include transition(all 1s);
-    &:focus{
-      box-shadow: none;
-      border-bottom-color: $orange;
-      @include transition(all 1s);
-    }
-  }
 }
 
 // .google-maps{
