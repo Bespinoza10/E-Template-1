@@ -18,7 +18,7 @@
             <div class="modal-body">
 
               <div class="col-md-10 center">
-                <%= form_for footer do |f| %>
+                <%= form_for footer, :html => { :style => 'display: inline-block;'} do |f| %>
                   <% if footer.errors.any?%>
                     <h2><%= pluralize(footer.errors.count, "error") %> prevented this client from saving:</h2>
                     <ul>
@@ -28,28 +28,33 @@
                     </ul>
                   <%end%>
 
-                  <div class="form-group col-md-4">
+                  <div class="form-group col-md-6">
                     <%= f.label :fb_username %>
                     <%= f.text_field :fb_username, {class: 'form-control form-input'} %>
                   </div>
 
-                  <div class="form-group col-md-4">
+                  <div class="form-group col-md-6">
                     <%= f.label :ig_username %>
                     <%= f.text_field :ig_username, {class: 'form-control form-input'} %>
                   </div>
-                  <div class="form-group col-md-4">
+                  <div class="form-group col-md-6">
                     <%= f.label :twitter_username %>
                     <%= f.text_field :twitter_username, {class: 'form-control form-input'} %>
                   </div>
-                  <div class="form-group col-md-4">
+                  <div class="form-group col-md-6">
                     <%= f.label :in_username %>
                     <%= f.text_field :in_username, {class: 'form-control form-input'} %>
                   </div>
-                  <div class="form-group col-md-4">
+                  <div class="form-group col-md-6">
                     <%= f.label :pin_username %>
                     <%= f.text_field :pin_username, {class: 'form-control form-input'} %>
                   </div>
-                  <button type="submit" class="btn sendbtn">Submit</button>
+                  <div class="form-group col-md-6">
+                    <button type="submit" class="btn btn-border-purple-submit" style="margin-bottom:10px;">Submit</button>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <button type="button" class="btn btn-border-orange" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">Cancel</span></button>
+                  </div>
 
                 <%end%>
               </div>
