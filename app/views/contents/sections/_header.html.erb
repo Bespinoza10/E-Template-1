@@ -34,7 +34,7 @@
               <div class="modal-body">
 
                 <div class="col-md-10 center header-form">
-                  <%= form_for header do |f| %>
+                  <%= form_for header, :html => { :style => 'display: inline-block;'} do |f| %>
                     <% if header.errors.any?%>
                       <h2><%= pluralize(header.errors.count, "error") %> prevented this client from saving:</h2>
                       <ul>
@@ -60,9 +60,12 @@
                       <%= f.label :title %>
                       <%= f.text_field :title, {class: 'form-control form-input'} %>
                     </div>
-
-
-                   <button type="submit" class="btn btn-border-purple-submit">Submit</button>
+                   <div class="form-group col-md-6">
+                     <button type="submit" class="btn btn-border-purple-submit">Submit</button>
+                   </div>
+                   <div class="form-group col-md-6">
+                     <button type="button" class="btn btn-border-orange" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">Cancel</span></button>
+                   </div>
 
 
                   <%end%>
