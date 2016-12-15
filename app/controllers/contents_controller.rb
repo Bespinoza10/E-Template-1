@@ -10,6 +10,7 @@ class ContentsController < ApplicationController
     @portfolios = Portfolio.all.order("created_at asc")
     @contacts = Contact.all
     @footers = Footer.all
+    @title = Title.all
   end
 
   def new

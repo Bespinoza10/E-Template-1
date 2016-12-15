@@ -7,6 +7,9 @@
     width: 100px;
     height: 100px;
   }
+  hr{
+    border-top-color: #000 !important;
+  }
 }
 .service-name{
   font-style: italic; color: $orange;

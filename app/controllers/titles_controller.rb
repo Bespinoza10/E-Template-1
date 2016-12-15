@@ -37,7 +37,7 @@ class TitlesController < ApplicationController
   private
 
   def title_params
-    params.require(:title).permit(:services_title)
+    params.require(:title).permit(:services_title, :logo_name)
   end
 
   def find_title
