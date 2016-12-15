@@ -14,4 +14,5 @@ Rails.application.routes.draw do
   resources :portfolios
   resources :contacts
   resources :footers
+  resources :titles
 end
