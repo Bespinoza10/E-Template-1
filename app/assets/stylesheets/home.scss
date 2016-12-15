@@ -86,6 +86,7 @@ a{
   padding: 8px 10px;
   font-size: 18px;
   letter-spacing: 2px;
+  border-radius: 3px;
   font-weight: 200;
   @include transition(all .6s);
   &:hover{
