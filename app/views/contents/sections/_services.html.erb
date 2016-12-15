@@ -19,7 +19,7 @@
             </div>
             <div class="modal-body">
 
-              <div class="col-md-10 center">
+              <div class="col-md-6 center">
                 <%= form_for title, :html => { :style => 'display: inline-block;'} do |f| %>
                   <% if title.errors.any?%>
                     <h2><%= pluralize(title.errors.count, "error") %> prevented this client from saving:</h2>
