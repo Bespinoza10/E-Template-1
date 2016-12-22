@@ -80,3 +80,47 @@
     </div>
   </header>
 <%end%>
+<% @title.each do |title|%>
+  <% if user_signed_in? %>
+    <!-- Modal -->
+    <div class="modal fade" id="logoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+          <div class="col-md-1 col-md-offset-11"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">close</span>
+          </button></div>
+
+          <div class="padding-section">
+            <div class="col-md-6 center padding-section-elements-bottom">
+              <h2 class="modal-title" id="myModalLabel">Edit Your Logo</h2>
+            </div>
+            <div class="col-sm-6 col-md-6 center">
+              <%= form_for title do |f| %>
+                <% if title.errors.any?%>
+                  <h2><%= pluralize(title.errors.count, "error") %> prevented this client from saving:</h2>
+                  <ul>
+                    <% title.errors.full_messages.each do |msg| %>
+                      <li><%= msg %></li>
+                    <%end%>
+                  </ul>
+                <%end%>
+                <div class="form-group col-md-12">
+                  <%= f.label :logo_name %>
+                  <%= f.text_field :logo_name, {class: 'form-control form-input'} %>
+                </div>
+
+                <div class="col-md-6">
+                  <button type="submit" class="btn btn-border-purple-submit" style="margin-bottom:10px;">Submit</button>
+                </div>
+                <div class="form-group col-md-6">
+                  <button type="button" class="btn btn-border-orange" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">Cancel</span></button>
+                </div>
+
+              <%end%>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <%end%>
+<%end%>

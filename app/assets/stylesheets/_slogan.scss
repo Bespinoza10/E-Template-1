@@ -23,10 +23,5 @@
        color: #fff;
        @include transition(all .6s);
      }
-   } #sloganModal .modal-dialog{
-       width: 30%;
-       .modal-content{
-         position: absolute;
-       }
    }
 }
