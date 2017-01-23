@@ -4,7 +4,7 @@ class TitlesController < ApplicationController
 
   def new
     @title = Title.new
-    @contents = Content.all
+
   end
 
   def create

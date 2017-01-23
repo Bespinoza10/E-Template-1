@@ -1,0 +1,27 @@
+<div class="col-md-6 center slogan-form">
+  <%= form_for @title do |f| %>
+    <% if @title.errors.any?%>
+      <h2><%= pluralize(@title.errors.count, "error") %> prevented this client from saving:</h2>
+      <ul>
+        <% @title.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <%end%>
+      </ul>
+    <%end%>
+
+    <div class="form-group col-md-12">
+      <%= f.label :services_title %>
+      <%= f.text_field :services_title, {class: 'form-control form-input'} %>
+    </div>
+
+    <div class="form-group col-md-12">
+      <%= f.label :logo_name %>
+      <%= f.text_field :logo_name, {class: 'form-control form-input'} %>
+    </div>
+
+    <div class="col-md-6">
+      <button type="submit" class="btn btn-border-purple-submit" style="margin-bottom:10px;">Submit</button>
+    </div>
+
+  <%end%>
+</div>

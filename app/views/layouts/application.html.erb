@@ -36,6 +36,11 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
+            <% if @title.empty?%>
+              <div class="text-center">
+                <a><%= link_to "Create Logo", new_title_path(@title), {class: "btn btn-border-blue"} %></a>
+              </div>
+            <%end%>
             <% @title.each do |title| %>
               <a class="navbar-brand" ><%= title.logo_name %></a>
               <% if user_signed_in? %>

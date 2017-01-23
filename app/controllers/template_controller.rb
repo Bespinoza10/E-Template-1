@@ -1,5 +1,4 @@
 class TemplateController < ApplicationController
-  before_action :find_content, only: [:show, :edit, :update, :destroy, :ledit]
 
   def index
     @contents = Content.all
