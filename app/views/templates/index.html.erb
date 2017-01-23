@@ -1,0 +1,11 @@
+<% @templates.each do |template| %>
+  <%= render partial: 'template/sections/header'%>
+  <%= render partial: 'template/sections/services'%>
+  <%= render partial: 'template/sections/slogan'%>
+  <%= render partial: 'template/sections/gallery'%>
+  <%= render partial: 'template/sections/contact'%>
+  <%= render partial: 'template/sections/footer'%>
+  <% if user_signed_in? %>
+    <a><%= link_to "Edit", edit_content_path(content), {class: "btn sendbtn"} %></a>
+  <%end%>
+<%end%>

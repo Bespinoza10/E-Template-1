@@ -1,0 +1,120 @@
+<% @footers.each do |footer|%>
+  <div class="container-fluid footer">
+
+    <!-- MODAL AND FORM -->
+    <% if user_signed_in? %>
+      <div class="text-center">
+        <br>
+        <a class="btn btn-border-edit" data-toggle="modal" data-target="#footerModal">Edit Footer</a>
+      </div>
+      <!-- Modal -->
+      <div class="modal fade" id="footerModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h2 class="modal-title" id="myModalLabel">Edit Your Header</h2>
+            </div>
+            <div class="modal-body">
+
+              <div class="col-md-10 center">
+                <%= form_for footer, :html => { :style => 'display: inline-block;'} do |f| %>
+                  <% if footer.errors.any?%>
+                    <h2><%= pluralize(footer.errors.count, "error") %> prevented this client from saving:</h2>
+                    <ul>
+                      <% footer.errors.full_messages.each do |msg| %>
+                        <li><%= msg %></li>
+                      <%end%>
+                    </ul>
+                  <%end%>
+
+                  <div class="form-group col-md-6">
+                    <%= f.label :fb_username %>
+                    <%= f.text_field :fb_username, {class: 'form-control form-input'} %>
+                  </div>
+
+                  <div class="form-group col-md-6">
+                    <%= f.label :ig_username %>
+                    <%= f.text_field :ig_username, {class: 'form-control form-input'} %>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <%= f.label :twitter_username %>
+                    <%= f.text_field :twitter_username, {class: 'form-control form-input'} %>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <%= f.label :in_username %>
+                    <%= f.text_field :in_username, {class: 'form-control form-input'} %>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <%= f.label :pin_username %>
+                    <%= f.text_field :pin_username, {class: 'form-control form-input'} %>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <button type="submit" class="btn btn-border-purple-submit" style="margin-bottom:10px;">Submit</button>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <button type="button" class="btn btn-border-orange" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">Cancel</span></button>
+                  </div>
+
+                <%end%>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <%end%>
+
+
+    <!-- REAL FOOTER -->
+    <div class="container">
+      <div class="col-md-12">
+
+          <div class=" footer-links">
+            <% if footer.fb_username.empty?%>
+              <li style="display:none"><a target="_blank" href="https://www.facebook.com/<%= footer.fb_username%>"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+            <%else%>
+              <a target="_blank" href="https://www.facebook.com/<%= footer.fb_username%>"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+            <%end%>
+            <% if footer.ig_username.empty?%>
+               <li style="display:none;"><a target="_blank" href="https://www.instagram.com/<%= footer.ig_username%>"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+            <%else%>
+              <a target="_blank" href="https://www.instagram.com/<%= footer.ig_username%>"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+            <%end%>
+            <% if footer.twitter_username.empty?%>
+              <li style="display:none;"><a target="_blank" href="https://twitter.com/<%= footer.twitter_username%>"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+            <%else%>
+              <a target="_blank" href="https://twitter.com/<%= footer.twitter_username%>"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+            <%end%>
+            <% if footer.in_username.empty?%>
+              <li style="display:none;"><a target="_blank" href="https://linkedin.com/in/<%= footer.in_username%>"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+            <%else%>
+              <a target="_blank" href="https://linkedin.com/in/<%= footer.in_username%>"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+            <%end%>
+            <% if footer.pin_username.empty?%>
+              <li style="display:none;"><a target="_blank" href="https://www.pinterest.com/<%= footer.pin_username%>"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
+            <%else%>
+              <a target="_blank" href="https://www.pinterest.com/<%= footer.pin_username%>"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a>
+            <%end%>
+          </div>
+
+      </div>
+
+      <div class="col-md-12">
+        <ul class=" footer-links">
+
+          <a href="#">Home</a>
+          <a href="#">About</a>
+          <a href="#">Services</a>
+          <a href="#">Portfolio</a>
+          <a href="#">Contact</a>
+          <% if user_signed_in? %>
+            <li><%= link_to "SIGN OUT", destroy_user_session_path, method: :delete %></li>
+          <%else%>
+            <li><a href="<%= new_user_session_path %>">Login</a><li>
+          <%end%>
+
+        </ul>
+      </div>
+    </div>
+  </div>
+<%end%>

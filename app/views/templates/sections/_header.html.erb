@@ -1,0 +1,132 @@
+<% @headers.each do |header|%>
+  <header id="home" class="hero" style="background: linear-gradient(
+                       rgba(20,20,20, .5),
+                       rgba(20,20,20, .5)),
+                       url( '<%= header.header_bg.url %>');
+  background-attachment: fixed;
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  color: white;
+  height: 100vh;
+  line-height: 100vh;
+  margin-top: -20px;">
+
+    <div class="col-md-12 hero-caption center">
+      <h1><%= header.title %></h1>
+
+      <!-- If user is signed in then show the edit button and its modal when clicked -->
+        <!-- Edit Start -->
+      <% if user_signed_in? %>
+        <div class="text-center">
+          <a class="btn-border-edit" data-toggle="modal" data-target="#headerModal">Edit</a>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="headerModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="col-md-1 col-md-offset-11">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">close</span>
+                </button>
+              </div>
+
+              <div class="padding-section">
+                <div class="col-md-10 center padding-section-elements-bottom">
+                  <h2 class="modal-title" id="myModalLabel">Edit Your Header</h2>
+                </div>
+
+                <div class="col-md-10 center header-form">
+                  <%= form_for header, :html => { :style => 'display: inline-block;'} do |f| %>
+                    <% if header.errors.any?%>
+                      <h2><%= pluralize(header.errors.count, "error") %> prevented this client from saving:</h2>
+                      <ul>
+                        <% header.errors.full_messages.each do |msg| %>
+                          <li><%= msg %></li>
+                        <%end%>
+                      </ul>
+                    <%end%>
+
+                    <div class="form-group col-md-12">
+                      <% if header.header_bg.exists? %>
+                        Current Photo
+                        <%= image_tag header.header_bg.url, {class: "img-responsive current_image"} %>
+                      <%end%>
+                    </div>
+
+                    <div class="form-group col-md-6">
+                      <%= f.label :header_bg %>
+                      <%= f.file_field :header_bg, class: "validate" %>
+                    </div>
+
+                    <div class="form-group col-md-6">
+                      <%= f.label :title %>
+                      <%= f.text_field :title, {class: 'form-control form-input'} %>
+                    </div>
+                   <div class="form-group col-md-6">
+                     <button type="submit" class="btn btn-border-purple-submit">Submit</button>
+                   </div>
+                   <div class="form-group col-md-6">
+                     <button type="button" class="btn btn-border-orange" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">Cancel</span></button>
+                   </div>
+
+
+                  <%end%>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      <%end%>
+
+      <!-- Edit END -->
+    </div>
+  </header>
+<%end%>
+<% @title.each do |title|%>
+  <% if user_signed_in? %>
+    <!-- Modal -->
+    <div class="modal fade" id="logoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+          <div class="col-md-1 col-md-offset-11"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">close</span>
+          </button></div>
+
+          <div class="padding-section">
+            <div class="col-md-10 center padding-section-elements-bottom">
+              <h2 class="modal-title" id="myModalLabel">Edit Your Logo</h2>
+            </div>
+            <div class="col-sm-10 col-md-10 center">
+              <%= form_for title do |f| %>
+                <% if title.errors.any?%>
+                  <h2><%= pluralize(title.errors.count, "error") %> prevented this client from saving:</h2>
+                  <ul>
+                    <% title.errors.full_messages.each do |msg| %>
+                      <li><%= msg %></li>
+                    <%end%>
+                  </ul>
+                <%end%>
+                <div class="form-group col-md-12">
+                  <%= f.label :logo_name %>
+                  <%= f.text_field :logo_name, {class: 'form-control form-input'} %>
+                </div>
+
+                <div class="col-md-6">
+                  <button type="submit" class="btn btn-border-purple-submit" style="margin-bottom:10px;">Submit</button>
+                </div>
+                <div class="form-group col-md-6">
+                  <button type="button" class="btn btn-border-orange" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">Cancel</span></button>
+                </div>
+
+              <%end%>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <%end%>
+<%end%>

@@ -3,7 +3,7 @@ class ContentsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    @contents = Content.all
+    @template = Template.all
     @headers = Header.all
     @services = Service.all.order("created_at asc")
     @slogan = Slogan.all
@@ -13,9 +13,7 @@ class ContentsController < ApplicationController
     @title = Title.all
   end
 
-  def new
-    @content = Content.new
-  end
+
   def create
     @content = Content.new content_params
 
