@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161215212343) do
+ActiveRecord::Schema.define(version: 20170123225636) do
 
   create_table "contacts", force: :cascade do |t|
     t.string   "contact_title"
@@ -68,6 +68,12 @@ ActiveRecord::Schema.define(version: 20161215212343) do
     t.string   "header_bg_content_type"
     t.integer  "header_bg_file_size"
     t.datetime "header_bg_updated_at"
+  end
+
+  create_table "logos", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "portfolios", force: :cascade do |t|
