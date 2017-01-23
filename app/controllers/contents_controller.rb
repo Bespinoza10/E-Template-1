@@ -16,7 +16,6 @@ class ContentsController < ApplicationController
   def new
     @content = Content.new
   end
-
   def create
     @content = Content.new content_params
 
